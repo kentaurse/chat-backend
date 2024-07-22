@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package Messaging;
+
+import "google/protobuf/wrappers.proto";
+
+option go_package = "./";
+
+service Messaging {
+    rpc sendMessage(messageSend) returns (google.protobuf.BoolValue) {}
+}
+
+message messageSend {
+    string message = 1;
+}
